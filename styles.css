@@ -187,3 +187,25 @@ a{color:inherit;text-decoration:none}
   font-weight: 700;
   margin: 8px 0 4px;
 }
+
+
+
+/* ✅ 모바일에서 가로 스크롤(오른쪽 튐) 방지 */
+html, body {
+  overflow-x: hidden;
+}
+
+/* ✅ 모든 이미지가 화면 너비를 넘지 않게 */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* 이미지 아래 이상한 여백 방지 */
+}
+
+/* ✅ tips의 hero 이미지(위 배너) 확실히 고정 */
+.hero img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* 필요 없으면 지워도 됨 */
+}
