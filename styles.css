@@ -214,9 +214,10 @@ img {
 /* ===== spots: 목차(앵커 링크) ===== */
 .toc{
   margin-top: 10px;
-  display:flex;
-  gap:10px;
-  flex-wrap: wrap;
+  display: flex;
+  flex-direction: column; /* ✅ 세로로 한 줄씩 */
+  gap: 10px;              /* ✅ 버튼 사이 간격 */
+  align-items: flex-start; /* 왼쪽 정렬 */
 }
 
 .tocLink{
@@ -226,6 +227,7 @@ img {
   border-radius:12px;
   font-weight:800;
   box-shadow: 0 10px 24px rgba(2,6,23,.06);
+
 }
 
 .tocLink:hover{
@@ -276,4 +278,41 @@ img {
 
 .toTop:active{
   transform: translateY(1px);
+}
+
+
+.spotLinks{
+  padding: 0 14px 16px;
+}
+
+.linkBtn{
+  display: inline-block;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.92);
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-weight: 800;
+  box-shadow: 0 10px 24px rgba(2,6,23,.06);
+}
+
+.linkBtn:hover{
+  border-color: rgba(59,130,246,.35);
+  background: #fff;
+}
+
+
+/* 버튼 영역: 카드 테두리에서 떨어지게 + 여러 버튼 정렬 */
+.spotLinks{
+  padding: 0 14px 16px;   /* ✅ 좌우/아래 여백 */
+  display: flex;
+  flex-wrap: wrap;         /* ✅ 버튼 많으면 자동 줄바꿈 */
+  gap: 10px;               /* ✅ 버튼 사이 간격 */
+}
+
+
+.pageLabel{
+  font-weight: 900;
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 10px;
 }
