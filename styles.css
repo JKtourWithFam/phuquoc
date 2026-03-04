@@ -209,3 +209,71 @@ img {
   height: auto;
   object-fit: cover; /* 필요 없으면 지워도 됨 */
 }
+
+
+/* ===== spots: 목차(앵커 링크) ===== */
+.toc{
+  margin-top: 10px;
+  display:flex;
+  gap:10px;
+  flex-wrap: wrap;
+}
+
+.tocLink{
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.85);
+  padding:8px 10px;
+  border-radius:12px;
+  font-weight:800;
+  box-shadow: 0 10px 24px rgba(2,6,23,.06);
+}
+
+.tocLink:hover{
+  background:#fff;
+  border-color: rgba(59,130,246,.25);
+}
+
+/* ===== spots: 섹션 카드 ===== */
+.spotSection h2{
+  margin-bottom: 10px;
+}
+
+.spotCard{
+  border:1px solid var(--line);
+  background: var(--card);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow: 0 14px 34px rgba(2,6,23,.10);
+}
+
+.spotImg{
+  width:100%;
+  height:auto;
+  display:block;
+}
+
+.spotDesc{
+  margin: 0;
+  padding: 14px 14px 16px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ===== 맨 위로 버튼(화면 하단 고정) ===== */
+.toTop{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 2000;
+
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.92);
+  border-radius: 999px;
+  padding: 10px 12px;
+  font-weight: 900;
+  box-shadow: 0 14px 34px rgba(2,6,23,.14);
+}
+
+.toTop:active{
+  transform: translateY(1px);
+}

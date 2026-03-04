@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>관광 · 일정</title>
+  <title>엄친 가족들 푸꾸옥 관광</title>
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -19,35 +19,63 @@
   </div>
   <div class="badge"><a href="./index.html">← 메인</a></div>
 </div>
-    <div class="header">
-      <div class="title">관광 · 일정</div>
-      <a class="badge" href="./index.html">← 메인</a>
-    </div>
 
-    <div class="hero">
-      <img src="./assets/spot1.jpg" alt="spot" />
-      <div class="heroText">
-        <h1>핵심 코스</h1>
-        <p>여기에 “일정/동선/예약정보”를 붙여넣으면 끝입니다.</p>
+    <!-- ✅ 여기까지(타이틀 이전) 수정 없음 -->
+    <div class="header" id="top">
+      <div class="title">엄친 가족들 푸꾸옥 관광</div>
+
+      <!-- ✅ 타이틀 밑: 목차(앵커 링크) -->
+      <div class="toc">
+<br>        <a class="tocLink" href="#hontom">혼똔섬 관광</a><br>
+        <a class="tocLink" href="#vinwonders">빈원더스 관광</a><br>
+        <a class="tocLink" href="#safari">사파리 관광</a><br>
       </div>
     </div>
 
-    <div class="section">
-      <h2>리스트</h2>
-      <div class="list">
-        <div class="item">
-          <div class="h"><b>선셋 사나토</b><span>16:30~</span></div>
-          <p>주소/이동방법/팁 메모</p>
-        </div>
-        <div class="item">
-          <div class="h"><b>빈원더스/사파리</b><span>오전 추천</span></div>
-          <p>입장권/셔틀/유의사항</p>
-        </div>
+    <!-- ✅ 본문 블럭 1: 혼똔섬 -->
+    <div class="section spotSection" id="hontom">
+      <h2>혼똔섬 관광 상세 설명</h2>
+
+      <div class="spotCard">
+        <img src="./assets/spot1.jpg" alt="혼똔섬" class="spotImg" />
+        <p class="spotDesc">
+          - 혼똔섬(케이블카/워터파크/남부 관광) 핵심 포인트를 여기에 간단히 적어두면 됩니다.<br>
+          - 이동 시간, 추천 시간대, 준비물(수건/썬크림/아쿠아슈즈) 같은 것만 적어도 좋아요.
+        </p>
       </div>
     </div>
 
-    <div class="footer">내용 수정: 이 파일에서 텍스트만 바꾸면 됩니다.</div>
+    <!-- ✅ 본문 블럭 2: 빈원더스 -->
+    <div class="section spotSection" id="vinwonders">
+      <h2>빈원더스 관광 상세 설명</h2>
+
+      <div class="spotCard">
+        <img src="./assets/spot2.jpg" alt="빈원더스" class="spotImg" />
+        <p class="spotDesc">
+          - 빈원더스(워터파크+놀이공원) 동선/우선순위(워터파크 → 놀이공원)를 간단히 정리해두면 좋아요.<br>
+          - 입장권, 라커, 복장(레시가드/갈아입을 옷) 메모 추천!
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ 본문 블럭 3: 사파리 -->
+    <div class="section spotSection" id="safari">
+      <h2>사파리 관광 상세 설명</h2>
+
+      <div class="spotCard">
+        <img src="./assets/spot3.jpg" alt="사파리" class="spotImg" />
+        <p class="spotDesc">
+          - 사파리는 햇빛/더위 대비(모자, 양산, 쿨토시)랑 수분 보충이 핵심이에요.<br>
+          - 아이들 체력 고려해서 휴식 타이밍(점심/간식)을 적어두면 훨씬 편합니다.
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ 하단 고정: 맨 위로 버튼 -->
+    <a class="toTop" href="#top" aria-label="맨 위로">↑ TOP</a>
+
   </div>
+
 <script>
   (function(){
     const btn = document.getElementById("menuBtn");
