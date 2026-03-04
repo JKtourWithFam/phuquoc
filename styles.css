@@ -174,3 +174,16 @@ a{color:inherit;text-decoration:none}
 .topbar--withTitle .badge{
   min-width: 56px;
 }
+
+/* 5칸 정도 들여쓰기 느낌(기기/폰트마다 조금 다름) */
+.indent{
+  padding-left: 2.2em;   /* " " 5칸 비슷한 폭 */
+}
+
+/* 빨간 굵은 '※ 준비물' */
+.noticeTitle{
+  padding-left: 2.2em;   /* 제목도 같은 위치로 맞추기(원하면 제거) */
+  color: #d10000;
+  font-weight: 700;
+  margin: 8px 0 4px;
+}
