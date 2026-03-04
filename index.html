@@ -9,10 +9,10 @@
   <meta name="theme-color" content="#f3f7ff" />
 </head>
 
-<body class="home">
+<body>
   <div class="wrap">
 
-    <!-- ✅ 다른 페이지와 동일한 구조: wrap 안 topbar -->
+    <!-- ✅ topbar는 딱 1개만 (tips 구조와 동일) -->
     <div class="topbar topbar--sticky topbar--withTitle">
       <div class="menuWrap">
         <button class="menuBtn" id="menuBtn" type="button">☰ 목록</button>
@@ -23,16 +23,15 @@
         </div>
       </div>
 
-      <!-- ✅ 가운데 제목(진짜 가운데 고정) -->
       <div class="topbarTitle">엄친 가족들 푸꾸옥 여행</div>
 
-      <!-- 오른쪽 공간(균형용/나중에 버튼 넣어도 됨) -->
-      <div class="badge">엄궁 가족들</div>
-    </div>
+<!-- ✅ 빈자리(보이진 않음) -->
+<div class="rightSpacer" aria-hidden="true"></div>
+      </div>
 
-    <!-- ✅ 메인 사진: 모바일 폭 느낌으로 가운데 -->
-    <div class="homeHeroCard">
-      <img class="homeHeroImg" src="./assets/cover.jpg" alt="푸꾸옥 메인 사진" />
+    <!-- 배너 사진 -->
+    <div class="banner">
+      <img src="./assets/cover.jpg" alt="메인 사진" />
     </div>
 
   </div>
@@ -49,6 +48,10 @@
         if(!panel.classList.contains("open")) return;
         if(panel.contains(e.target) || btn.contains(e.target)) return;
         panel.classList.remove("open");
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if(e.key === "Escape") panel.classList.remove("open");
       });
     })();
 
