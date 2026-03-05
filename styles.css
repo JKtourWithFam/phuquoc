@@ -493,13 +493,7 @@ img {
 }
 
 /* 항목 */
-.costTable th:nth-child(2),
-.costTable td:nth-child(2){
-  width: 250px;
-  white-space: normal;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-}
+
 
 /* 소계/단가/수량 */
 .costTable th:nth-child(3), .costTable td:nth-child(3){ width: 120px; white-space: nowrap; }
@@ -527,16 +521,44 @@ img {
   padding: 8px 6px !important;
 }
 
-/* 항목 칸 250 고정 */
-#costTable th:nth-child(2),
-#costTable td:nth-child(2){
-  width: 250px !important;
-  white-space: normal !important;
-  word-break: keep-all;
-  overflow-wrap: anywhere;
-}
 
 /* ✅ cost.html 테이블은 항목을 auto로 쓰기 위해 fixed 해제 */
 #costTable{
   table-layout: auto !important;
+}
+
+
+/* ✅ (핵심) 항목 칸: auto + 최대폭 제한 => 글 끝나면 단가가 바로 붙음 */
+#costTable{
+  table-layout: auto !important;   /* auto로 계산 */
+  width: 100%;
+}
+
+/* 선택칸: 최소한만 */
+#costTable th:nth-child(1),
+#costTable td:nth-child(1){
+  width: 44px;
+  padding: 8px 6px;
+}
+
+/* 항목칸: 고정폭 금지! 대신 최대폭만 제한 */
+#costTable th:nth-child(2),
+#costTable td:nth-child(2){
+  width: auto !important;
+  max-width: 200px;                /* ✅ 여기 숫자만 줄이면 공백이 확 줄어듦 (160~220 추천) */
+  white-space: nowrap;             /* ✅ 한 줄로 끝내고 */
+  overflow: hidden;
+  text-overflow: ellipsis;         /* ✅ 길면 ... 처리 */
+}
+
+/* 숫자칸은 고정폭(드래그 시 안정적) */
+#costTable th:nth-child(3), #costTable td:nth-child(3){ width: 120px; white-space: nowrap; }
+#costTable th:nth-child(4), #costTable td:nth-child(4){ width: 90px;  white-space: nowrap; }
+#costTable th:nth-child(5), #costTable td:nth-child(5){ width: 120px; white-space: nowrap; }
+
+/* number input이 칸을 밀지 못하게 */
+#costTable input[type="number"]{
+  width: 90px !important;
+  max-width: none !important;
+  box-sizing: border-box;
 }
