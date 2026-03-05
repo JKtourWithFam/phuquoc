@@ -610,3 +610,46 @@ img {
   font-weight: 900;
   white-space: nowrap;
 }
+
+
+/* ===== 숙소 분담(빈펄) 줄 정렬: 라벨/인원/금액 3열 고정 ===== */
+
+/* 숙소 분담 박스 안의 각 줄을 3열 그리드로 */
+.resultBox .resultRow{
+  display: grid;
+  grid-template-columns: 110px 90px 1fr; /* 라벨 / 입력 / 금액 */
+  align-items: center;
+  gap: 12px;
+}
+
+/* 왼쪽 라벨은 줄바꿈 금지 */
+.resultBox .resultLabel{
+  white-space: nowrap;
+}
+
+/* 가운데 입력칸 폭 고정 + 가운데 정렬 */
+.resultBox .calcInput{
+  width: 90px;
+  max-width: 90px;
+  text-align: center;
+}
+
+/* 오른쪽 값(금액)은 오른쪽 정렬 + 줄바꿈 금지 */
+.resultBox .resultValue{
+  justify-self: end;
+  white-space: nowrap;
+  font-weight: 900;
+}
+
+/* 그런데 "숙소총액/총인원(기준)" 줄은 값이 input이라 폭이 더 넓음 -> 예외 처리 */
+.resultBox .resultRow:nth-child(1),
+.resultBox .resultRow:nth-child(2){
+  grid-template-columns: 110px 1fr;  /* 라벨 / 입력 */
+}
+
+/* 1~2줄의 value는 우측정렬 대신 기본 */
+.resultBox .resultRow:nth-child(1) .resultValue,
+.resultBox .resultRow:nth-child(2) .resultValue{
+  justify-self: start;
+  font-weight: 900;
+}
