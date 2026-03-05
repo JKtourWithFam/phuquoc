@@ -653,3 +653,46 @@ img {
   justify-self: start;
   font-weight: 900;
 }
+
+
+/* ===== 숙소 분담 박스: 위 3줄은 기존처럼 오른쪽 정렬 ===== */
+
+/* 위 3줄(숙소총액/총인원/1인당)은 flex로 복구 */
+.resultBox .resultRow:nth-of-type(-n+3){
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between !important;
+  gap: 12px;
+}
+
+/* 위 3줄의 오른쪽 값은 오른쪽에 붙게 */
+.resultBox .resultRow:nth-of-type(-n+3) .resultValue{
+  justify-self: auto !important;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* ===== 아래 4줄(집별)만 3열 그리드 ===== */
+.resultBox .resultRow:nth-of-type(n+5):nth-of-type(-n+8){
+  display: grid !important;
+  grid-template-columns: 110px 90px 1fr; /* 라벨 / 인원 입력 / 금액 */
+  align-items: center;
+  gap: 12px;
+}
+
+.resultBox .resultRow:nth-of-type(n+5):nth-of-type(-n+8) .resultLabel{
+  white-space: nowrap;
+}
+
+.resultBox .resultRow:nth-of-type(n+5):nth-of-type(-n+8) .calcInput{
+  width: 90px;
+  max-width: 90px;
+  text-align: center;
+}
+
+.resultBox .resultRow:nth-of-type(n+5):nth-of-type(-n+8) .resultValue{
+  justify-self: end !important;
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 900;
+}
