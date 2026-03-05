@@ -448,7 +448,7 @@
 
       // 4) 표 숙소 단가/수량 반영
       if(villaRowPriceEl) villaRowPriceEl.value = Math.round(per);
-      if(villaRowQtyEl) villaRowQtyEl.value = basePeople;
+
 
       return per;
     }
@@ -464,6 +464,11 @@
 
       // ✅ 숙소 단가(1인당) 먼저 계산하고 표에 반영
       calcVillaPerPerson();
+
+// ✅ 표의 숙소 수량은 "기본 인원(성인+어린이)"로
+if(villaRowQtyEl){
+  villaRowQtyEl.value = people;
+}
 
       let total = 0;
 
