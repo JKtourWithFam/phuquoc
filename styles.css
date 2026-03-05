@@ -399,8 +399,6 @@ img {
 /* 테이블이 너무 줄어들지 않게 최소 폭 확보 */
 .costTable{
   table-layout: fixed; 
-  width: 100%;
-  min-width: 720px;  /* ✅ 모바일에서 가로 스크롤로 보이게 */
   border-collapse: collapse;
   font-size: 14px;
 }
@@ -561,4 +559,31 @@ img {
   width: 90px !important;
   max-width: none !important;
   box-sizing: border-box;
+}
+
+/* ✅ cost 테이블: 남는 폭을 항목이 먹지 않게 (내용만큼만 폭을 가짐) */
+#costTable{
+  table-layout: auto !important;
+  width: max-content !important;   /* ★ 핵심: 100% 금지 */
+  min-width: 0 !important;         /* ★ 720px 강제 해제 */
+  display: inline-table;           /* 내용 기반 폭 계산 안정화 */
+}
+
+/* wrapper는 스크롤만 담당 */
+.tableWrap{
+  overflow-x: auto;
+}
+
+/* 숫자 입력칸이 폭 밀지 않게 */
+#costTable input[type="number"]{
+  width: 90px !important;
+  max-width: none !important;
+  box-sizing: border-box;
+}
+
+/* 항목은 필요하면 줄바꿈/말줄임 중 택1 */
+#costTable td:nth-child(2){
+  white-space: nowrap;        /* 한 줄 */
+  overflow: hidden;
+  text-overflow: ellipsis;    /* 길면 ... */
 }
