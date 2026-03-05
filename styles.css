@@ -398,6 +398,7 @@ img {
 
 /* 테이블이 너무 줄어들지 않게 최소 폭 확보 */
 .costTable{
+  table-layout: fixed; 
   width: 100%;
   min-width: 720px;  /* ✅ 모바일에서 가로 스크롤로 보이게 */
   border-collapse: collapse;
