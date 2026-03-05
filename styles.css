@@ -535,3 +535,8 @@ img {
   word-break: keep-all;
   overflow-wrap: anywhere;
 }
+
+/* ✅ cost.html 테이블은 항목을 auto로 쓰기 위해 fixed 해제 */
+#costTable{
+  table-layout: auto !important;
+}
