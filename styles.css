@@ -472,12 +472,12 @@ img {
 }
 
 /* ✅ 비용표: '항목' 컬럼은 줄바꿈 허용 */
-.costTable td:nth-child(2),
-.costTable th:nth-child(2){
-  white-space: normal;       /* 줄바꿈 허용 */
-  word-break: keep-all;      /* 한국어 단어 중간 잘림 방지 */
-  max-width: 220px;          /* 폭 제한 → 자동 줄바꿈 유도(원하면 조절) */
-}
+/.costTable td:nth-child(2),
+/.costTable th:nth-child(2){
+/  white-space: normal;       /* 줄바꿈 허용 */
+/  word-break: keep-all;      /* 한국어 단어 중간 잘림 방지 */
+/  max-width: 200px;          /* 폭 제한 → 자동 줄바꿈 유도(원하면 조절) */
+/}
 
 /* ✅ 숫자/소계는 줄바꿈 방지(보기 깔끔) */
 .costTable td.num,
@@ -498,24 +498,24 @@ img {
   width: 56px;
 }
 
-/* 항목 칸: 폭 제한 + 줄바꿈 */
+/* ✅ 항목 칸: 250px 고정 */
 .costTable th:nth-child(2),
 .costTable td:nth-child(2){
-  width: 220px;          /* 여기 숫자 줄이면 더 잘 줄바꿈됨(180~240 추천) */
+  width: 200px !important;   /* ✅ 250 고정 */
   white-space: normal !important;
   word-break: keep-all;
-  overflow-wrap: anywhere; /* 긴 문자열도 안전 */
+  overflow-wrap: anywhere;
 }
 
 /* 소계/단가/수량 칸은 고정 폭 */
 .costTable th:nth-child(3),
 .costTable td:nth-child(3){
-  width: 120px;
+  width: 100px;
   white-space: nowrap;
 }
 .costTable th:nth-child(4),
 .costTable td:nth-child(4){
-  width: 110px;
+  width: 100px;
   white-space: nowrap;
 }
 .costTable th:nth-child(5),
