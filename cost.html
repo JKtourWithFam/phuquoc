@@ -26,7 +26,10 @@
     <div class="pageLabel">표에서 체크/금액수정/인원수정 하시면 자동으로 합계가 계산됩니다</div>
 
     <div class="header">
-      <div class="title">여행 비용 계산하시면 됩니다. 혹시 추가할 항목이 있으면 말씀주세요! 추가해놓을게요.<br><br>가격은 일부러 크게 좀 잡았습니다. 여기서 적으면 5% 크면 15%정도 절감될거라 보시면 되요!!</div>
+      <div class="title">
+        여행 비용 계산하시면 됩니다. 혹시 추가할 항목이 있으면 말씀주세요! 추가해놓을게요.<br><br>
+        가격은 일부러 크게 좀 잡았습니다. 여기서 적으면 5% 크면 15%정도 절감될거라 보시면 되요!!
+      </div>
     </div>
 
     <!-- =========================
@@ -36,10 +39,9 @@
       <h2>기본 인원</h2>
 
       <div class="presetBar">
-        <button class="presetBtn" type="button" data-a="2" data-c="1">건우네 (성인2, 아동1)</button>
-        <button class="presetBtn" type="button" data-a="2" data-c="3">서현이네 (성인2, 아동3)</button>
-        <button class="presetBtn" type="button" data-a="2" data-c="1">주완이네 (성인1, 아동1)</button>
-        <button class="presetBtn" type="button" data-a="2" data-c="3">승현이네 (성인2, 아동3)</button>
+        <button class="presetBtn" type="button" id="btnGunwoo">건우네 (성인2, 아동1)</button>
+        <button class="presetBtn" type="button" id="btnSeohyun">서현이네 (성인2, 아동3)</button>
+        <button class="presetBtn" type="button" id="btnSeunghyun">승현이네 (성인2, 아동3)</button>
         <button class="presetBtn presetBtn--ghost" type="button" id="btnAll">전체(성인6, 아동7)</button>
       </div>
 
@@ -68,71 +70,75 @@
     <br><br><br>
 
     <!-- =========================
-         숙소 분담 계산(별도 박스)
+         숙소 분담 계산
     ========================= -->
     <div class="section">
       <h2>숙소 분담(빈펄 원더월드 4베드룸)</h2>
 
-      <div class="resultBox">
-        <div class="resultRow">
-          <div class="resultLabel">숙소 총액</div>
-          <div class="resultValue">
-            <input class="calcInput" id="villaTotal" type="number" min="0" value="3400000" />
-          </div>
-        </div>
+      <div class="tableWrap">
+        <table class="costTable" id="villaShareTable">
+          <colgroup>
+            <col style="width:150px;">
+            <col style="width:170px;">
+            <col style="width:170px;">
+            <col style="width:170px;">
+            <col style="width:28px;">
+            <col style="width:170px;">
+            <col style="width:170px;">
+          </colgroup>
 
-        <!-- ✅ 총 인원(기준): 이제 자동으로 "3집 인원 합계"로 들어감 -->
-        <div class="resultRow">
-          <div class="resultLabel">총 인원(기준)</div>
-          <div class="resultValue">
-            <input class="calcInput" id="villaPeopleBase" type="number" min="1" value="13" readonly />
-          </div>
-        </div>
+          <thead>
+            <tr>
+              <th></th>
+              <th>건우네</th>
+              <th>서현이네</th>
+              <th>승현이네</th>
+              <th></th>
+              <th colspan="2">4 베드룸</th>
+            </tr>
+          </thead>
 
-        <div class="resultRow">
-          <div class="resultLabel">1인당 숙소비</div>
-          <div class="resultValue" id="outVillaPerPerson">-</div>
-        </div>
+          <tbody>
+            <tr>
+              <th>기준 인원</th>
+              <td><input class="calcInput" id="baseGunwoo" type="text" value="성인2 아동1" /></td>
+              <td><input class="calcInput" id="baseSeohyun" type="text" value="성인2 아동1" /></td>
+              <td><input class="calcInput" id="baseSeunghyun" type="text" value="성인2 아동1" /></td>
+              <td></td>
+              <th>기준 금액</th>
+              <td><input class="calcInput" id="villaBasePrice" type="number" min="0" value="2843200" /></td>
+            </tr>
 
-        <hr class="calcHr">
+            <tr>
+              <th>추가 인원</th>
+              <td><input class="calcInput" id="extraGunwoo" type="text" value="" placeholder="" /></td>
+              <td><input class="calcInput" id="extraSeohyun" type="text" value="아동 2" /></td>
+              <td><input class="calcInput" id="extraSeunghyun" type="text" value="아동 2" /></td>
+              <td></td>
+              <th>추가 금액</th>
+              <td><input class="calcInput" id="villaExtraPrice" type="number" min="0" value="445440" /></td>
+            </tr>
 
-        <!-- ✅ 각 집 "인원"을 입력으로 변경 -->
-        <div class="resultRow">
-          <div class="resultLabel">건우네</div>
-          <div class="resultValue villaSplit">
-            <input class="calcInput" id="villaGunwooPeople" type="number" min="0" value="3" />
-            <span style="margin-left:10px;" id="outVillaGunwoo">-</span>
-          </div>
-        </div>
+            <tr>
+              <td colspan="5" style="background:#fff;"></td>
+              <td colspan="2" style="background:#fff;"></td>
+            </tr>
 
-        <div class="resultRow">
-          <div class="resultLabel">서현이네</div>
-          <div class="resultValue villaSplit">
-            <input class="calcInput" id="villaSeohyunPeople" type="number" min="0" value="5" />
-            <span style="margin-left:10px;" id="outVillaSeohyun">-</span>
-          </div>
-        </div>
+            <tr>
+              <th>각출 비용</th>
+              <td id="outVillaGunwoo">-</td>
+              <td id="outVillaSeohyun">-</td>
+              <td id="outVillaSeunghyun">-</td>
+              <td></td>
+              <th style="font-size:1.2rem;">최종 금액</th>
+              <td id="outVillaFinal" style="font-size:1.2rem;font-weight:800;">-</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-        <div class="resultRow">
-          <div class="resultLabel">주완이네</div>
-          <div class="resultValue villaSplit">
-            <input class="calcInput" id="villaJuwanPeople" type="number" min="0" value="0" />
-            <span style="margin-left:10px;" id="outVillaJuwan">-</span>
-          </div>
-        </div>
-
-        <div class="resultRow">
-          <div class="resultLabel">승현이네</div>
-          <div class="resultValue villaSplit">
-            <input class="calcInput" id="villaSeunghyunPeople" type="number" min="0" value="5" />
-            <span style="margin-left:10px;" id="outVillaSeunghyun">-</span>
-          </div>
-        </div>
-
-        <div class="hintText">
-          ※ 계산 방식: 숙소총액 ÷ (총 인원 기준) × (각 집 인원수)<br>
-          총 인원(기준)은 위 3집 인원 합계로 자동 계산됩니다.
-        </div>
+      <div class="hintText" style="margin-top:12px;">
+        ※ 상단 버튼을 누르면 해당 집의 각출 비용이 아래 항목 선택의 숙소 행에 자동 반영됩니다.
       </div>
     </div>
 
@@ -163,17 +169,16 @@
               <th class="num">소계(원)</th>
             </tr>
           </thead>
-          <tbody>
 
-            <!-- ✅ 숙소: 단가=1인당 숙소비 / 수량=총인원 -->
-            <tr data-mode="villaPerPerson">
+          <tbody>
+            <tr data-mode="villaSelectedFamily">
               <td><input type="checkbox" class="pick" checked></td>
-              <td>숙소<br>(원더월드 4베드룸, 1인당)</td>
+              <td>숙소<br>(원더월드 4베드룸)</td>
               <td class="num">
                 <input type="number" class="price" id="villaRowPrice" value="0" min="0" readonly>
               </td>
               <td class="num">
-                <input type="number" class="qty" id="villaRowQty" value="0" min="0" disabled>
+                <input type="number" class="qty" id="villaRowQty" value="1" min="0" readonly>
               </td>
               <td class="num subtotal">0</td>
             </tr>
@@ -181,7 +186,7 @@
             <tr data-mode="people">
               <td><input type="checkbox" class="pick" checked></td>
               <td>항공권</td>
-              <td class="num"><input type="number" class="price" value="360000" min="0"></td>
+              <td class="num"><input type="number" class="price" value="460000" min="0"></td>
               <td class="num"><input type="number" class="qty" value="0" min="0" disabled></td>
               <td class="num subtotal">0</td>
             </tr>
@@ -353,7 +358,6 @@
               <td class="num"><input type="number" class="qty" value="1" min="0"></td>
               <td class="num subtotal">0</td>
             </tr>
-
           </tbody>
         </table>
       </div>
@@ -385,7 +389,9 @@
       const btn = document.getElementById("menuBtn");
       const panel = document.getElementById("menuPanel");
       if(!btn || !panel) return;
+
       btn.addEventListener("click", () => panel.classList.toggle("open"));
+
       document.addEventListener("click", (e) => {
         if(!panel.classList.contains("open")) return;
         if(panel.contains(e.target) || btn.contains(e.target)) return;
@@ -397,19 +403,31 @@
     const childEl = document.getElementById("childCount");
     const table = document.getElementById("costTable");
 
-    // 숙소 분담 입력
-    const villaTotalEl = document.getElementById("villaTotal");
-    const villaPeopleBaseEl = document.getElementById("villaPeopleBase");
+    const btnGunwoo = document.getElementById("btnGunwoo");
+    const btnSeohyun = document.getElementById("btnSeohyun");
+    const btnSeunghyun = document.getElementById("btnSeunghyun");
+    const btnAll = document.getElementById("btnAll");
 
-    // ✅ 각 집 인원 입력
-    const villaGunwooPeopleEl = document.getElementById("villaGunwooPeople");
-    const villaSeohyunPeopleEl = document.getElementById("villaSeohyunPeople");
-    const villaJuwanPeopleEl = document.getElementById("villaJuwanPeople");
-    const villaSeunghyunPeopleEl = document.getElementById("villaSeunghyunPeople");
+    const villaBasePriceEl = document.getElementById("villaBasePrice");
+    const villaExtraPriceEl = document.getElementById("villaExtraPrice");
 
-    // 표의 숙소 행(단가/수량)
+    const baseGunwooEl = document.getElementById("baseGunwoo");
+    const baseSeohyunEl = document.getElementById("baseSeohyun");
+    const baseSeunghyunEl = document.getElementById("baseSeunghyun");
+
+    const extraGunwooEl = document.getElementById("extraGunwoo");
+    const extraSeohyunEl = document.getElementById("extraSeohyun");
+    const extraSeunghyunEl = document.getElementById("extraSeunghyun");
+
+    const outVillaGunwooEl = document.getElementById("outVillaGunwoo");
+    const outVillaSeohyunEl = document.getElementById("outVillaSeohyun");
+    const outVillaSeunghyunEl = document.getElementById("outVillaSeunghyun");
+    const outVillaFinalEl = document.getElementById("outVillaFinal");
+
     const villaRowPriceEl = document.getElementById("villaRowPrice");
     const villaRowQtyEl = document.getElementById("villaRowQty");
+
+    let selectedFamily = "all"; // gunwoo | seohyun | seunghyun | all
 
     const fmt = (n) => Math.round(n).toLocaleString("ko-KR");
 
@@ -419,38 +437,62 @@
       return { adults: a, kids: c, people: a + c };
     }
 
-    function getVillaFamilyPeople(){
-      const g = Math.max(0, Number(villaGunwooPeopleEl?.value) || 0);
-      const s = Math.max(0, Number(villaSeohyunPeopleEl?.value) || 0);
-      const j = Math.max(0, Number(villaJuwanPeopleEl?.value) || 0);
-      const sh = Math.max(0, Number(villaSeunghyunPeopleEl?.value) || 0);
-      return { g, s, j, sh, sum: g + s + j + sh };
+    function parsePeopleText(text){
+      const s = String(text || "").trim();
+      if(!s) return 0;
+
+      const nums = s.match(/\d+/g);
+      if(!nums) return 0;
+
+      return nums.map(Number).reduce((sum, n) => sum + n, 0);
     }
 
-    // ✅ 숙소 1인당 비용 계산 + 화면/표 반영
-    function calcVillaPerPerson(){
-      const villaTotal = Number(villaTotalEl.value) || 0;
+    function calcVillaShare(){
+      const basePrice = Number(villaBasePriceEl.value) || 0;
+      const extraPrice = Number(villaExtraPriceEl.value) || 0;
 
-      // 1) 4집 인원 합계 -> 총 인원(기준)
-      const fam = getVillaFamilyPeople();
-      const basePeople = Math.max(1, fam.sum || 1);
-      villaPeopleBaseEl.value = basePeople;
+      const baseGunwoo = parsePeopleText(baseGunwooEl.value);
+      const baseSeohyun = parsePeopleText(baseSeohyunEl.value);
+      const baseSeunghyun = parsePeopleText(baseSeunghyunEl.value);
 
-      // 2) 1인당 계산
-      const per = villaTotal / basePeople;
+      const extraGunwoo = parsePeopleText(extraGunwooEl.value);
+      const extraSeohyun = parsePeopleText(extraSeohyunEl.value);
+      const extraSeunghyun = parsePeopleText(extraSeunghyunEl.value);
 
-      // 3) 출력
-      document.getElementById("outVillaPerPerson").textContent = fmt(per) + " 원";
-      document.getElementById("outVillaGunwoo").textContent = fmt(per * fam.g) + " 원";
-      document.getElementById("outVillaSeohyun").textContent = fmt(per * fam.s) + " 원";
-      document.getElementById("outVillaJuwan").textContent = fmt(per * fam.j) + " 원";
-      document.getElementById("outVillaSeunghyun").textContent = fmt(per * fam.sh) + " 원";
+      const totalBasePeople = baseGunwoo + baseSeohyun + baseSeunghyun;
+      const totalExtraPeople = extraGunwoo + extraSeohyun + extraSeunghyun;
 
-      // 4) 표 숙소 단가/수량 반영
-      if(villaRowPriceEl) villaRowPriceEl.value = Math.round(per);
+      const basePerPerson = totalBasePeople > 0 ? (basePrice / totalBasePeople) : 0;
+      const extraPerPerson = totalExtraPeople > 0 ? (extraPrice / totalExtraPeople) : 0;
 
+      const gunwooCost = Math.round(basePerPerson * baseGunwoo + extraPerPerson * extraGunwoo);
+      const seohyunCost = Math.round(basePerPerson * baseSeohyun + extraPerPerson * extraSeohyun);
+      const seunghyunCost = Math.round(basePerPerson * baseSeunghyun + extraPerPerson * extraSeunghyun);
+      const finalPrice = Math.round(basePrice + extraPrice);
 
-      return per;
+      outVillaGunwooEl.textContent = fmt(gunwooCost);
+      outVillaSeohyunEl.textContent = fmt(seohyunCost);
+      outVillaSeunghyunEl.textContent = fmt(seunghyunCost);
+      outVillaFinalEl.textContent = fmt(finalPrice);
+
+      return {
+        gunwooCost,
+        seohyunCost,
+        seunghyunCost,
+        finalPrice
+      };
+    }
+
+    function applySelectedVillaToRow(villaResult){
+      let price = villaResult.finalPrice;
+
+      if(selectedFamily === "gunwoo") price = villaResult.gunwooCost;
+      else if(selectedFamily === "seohyun") price = villaResult.seohyunCost;
+      else if(selectedFamily === "seunghyun") price = villaResult.seunghyunCost;
+      else price = villaResult.finalPrice;
+
+      villaRowPriceEl.value = price;
+      villaRowQtyEl.value = 1;
     }
 
     function calc(){
@@ -462,13 +504,8 @@
 
       document.getElementById("outPeople").textContent = fmt(people) + " 명";
 
-      // ✅ 숙소 단가(1인당) 먼저 계산하고 표에 반영
-      calcVillaPerPerson();
-
-// ✅ 표의 숙소 수량은 "기본 인원(성인+어린이)"로
-if(villaRowQtyEl){
-  villaRowQtyEl.value = people;
-}
+      const villaResult = calcVillaShare();
+      applySelectedVillaToRow(villaResult);
 
       let total = 0;
 
@@ -484,12 +521,17 @@ if(villaRowQtyEl){
         if(mode === "adult") qty.value = adults;
         else if(mode === "child") qty.value = kids;
         else if(mode === "people") qty.value = people;
-        else if(mode === "villaPerPerson") {
-          // 숙소 행은 위에서 값 채움
+        else if(mode === "villaSelectedFamily") {
+          qty.value = 1;
         }
 
-        // manual만 수량 입력 가능, 나머지는 비활성
-        qty.disabled = (mode !== "manual");
+        if(mode === "manual") {
+          qty.disabled = false;
+          qty.readOnly = false;
+        } else {
+          qty.disabled = true;
+          qty.readOnly = true;
+        }
 
         const p = Number(price.value) || 0;
         const q = Number(qty.value) || 0;
@@ -506,42 +548,47 @@ if(villaRowQtyEl){
         people > 0 ? (fmt(total / people) + " 원") : "-";
     }
 
-    // 가족 프리셋 버튼
-    document.querySelectorAll(".presetBtn[data-a]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        adultEl.value = btn.getAttribute("data-a");
-        childEl.value = btn.getAttribute("data-c");
-        calc();
-      });
-    });
+    function selectPreset(familyKey){
+      selectedFamily = familyKey;
 
-    const btnAll = document.getElementById("btnAll");
-    if(btnAll){
-      btnAll.addEventListener("click", () => {
-        adultEl.value = 8;
-        childEl.value = 8;
-        calc();
-      });
+      if(familyKey === "gunwoo"){
+        adultEl.value = 2;
+        childEl.value = 1;
+      } else if(familyKey === "seohyun"){
+        adultEl.value = 2;
+        childEl.value = 3;
+      } else if(familyKey === "seunghyun"){
+        adultEl.value = 2;
+        childEl.value = 3;
+      } else {
+        adultEl.value = 6;
+        childEl.value = 7;
+      }
+
+      calc();
     }
 
-    // 이벤트
+    btnGunwoo.addEventListener("click", () => selectPreset("gunwoo"));
+    btnSeohyun.addEventListener("click", () => selectPreset("seohyun"));
+    btnSeunghyun.addEventListener("click", () => selectPreset("seunghyun"));
+    btnAll.addEventListener("click", () => selectPreset("all"));
+
     document.addEventListener("input", (e) => {
       if(
         e.target.closest("#costTable") ||
+        e.target.closest("#villaShareTable") ||
         e.target === adultEl ||
-        e.target === childEl ||
-        e.target === villaTotalEl ||
-        e.target === villaGunwooPeopleEl ||
-        e.target === villaSeohyunPeopleEl ||
-        e.target === villaJuwanPeopleEl ||
-        e.target === villaSeunghyunPeopleEl
+        e.target === childEl
       ){
         calc();
       }
     });
 
     document.addEventListener("change", (e) => {
-      if(e.target.closest("#costTable")){
+      if(
+        e.target.closest("#costTable") ||
+        e.target.closest("#villaShareTable")
+      ){
         calc();
       }
     });
