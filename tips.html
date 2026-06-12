@@ -5,43 +5,98 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>엄친 가족들 푸꾸옥 여행 일정</title>
   <link rel="stylesheet" href="./styles.css" />
+  <style>
+    .dayTitle{
+      display:inline-block;
+      font-size:1.22rem;
+      font-weight:900;
+      color:#0f172a;
+      background:linear-gradient(90deg, #fff3bf 0%, #ffe08a 100%);
+      padding:10px 16px;
+      border-left:6px solid #f59e0b;
+      border-radius:12px;
+      box-shadow:0 4px 14px rgba(0,0,0,0.08);
+      letter-spacing:-0.2px;
+      line-height:1.4;
+    }
+
+    .dayTitle--start{
+      background:linear-gradient(90deg, #dbeafe 0%, #bfdbfe 100%);
+      border-left-color:#2563eb;
+      color:#0b3b8c;
+    }
+
+    .dayTitle--end{
+      background:linear-gradient(90deg, #dcfce7 0%, #bbf7d0 100%);
+      border-left-color:#16a34a;
+      color:#166534;
+    }
+
+    .toc .tocLink{
+      font-weight:800;
+    }
+
+    .noticeTitle{
+      display:inline-block;
+      font-weight:900;
+      font-size:1.02rem;
+      padding:10px 14px;
+      border-radius:12px;
+      line-height:1.5;
+      margin:4px 0 10px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.06);
+      letter-spacing:-0.1px;
+    }
+
+    .noticeMain{
+      background:linear-gradient(90deg, #ede9fe 0%, #dbeafe 100%);
+      color:#3730a3;
+      border-left:6px solid #6366f1;
+    }
+
+    .noticeSub{
+      background:linear-gradient(90deg, #ffe4e6 0%, #fef3c7 100%);
+      color:#9f1239;
+      border-left:6px solid #f43f5e;
+    }
+  </style>
 </head>
 <body>
   <div class="wrap" id="top">
-<div class="topbar">
-  <div class="menuWrap">
-    <button class="menuBtn" id="menuBtn" type="button">☰ 목록</button>
-    <div class="menuPanel" id="menuPanel">
-      <a class="menuItem" href="./ready.html">준비물</a>
-      <a class="menuItem" href="./tips.html">일정</a>
-      <a class="menuItem" href="./spots.html">관광</a>
-      <a class="menuItem" href="./food.html">맛집</a>
+    <div class="topbar">
+      <div class="menuWrap">
+        <button class="menuBtn" id="menuBtn" type="button">☰ 목록</button>
+        <div class="menuPanel" id="menuPanel">
+          <a class="menuItem" href="./ready.html">준비물</a>
+          <a class="menuItem" href="./tips.html">일정</a>
+          <a class="menuItem" href="./spots.html">관광</a>
+          <a class="menuItem" href="./food.html">맛집</a>
           <a class="menuItem" href="./마사지.html">마사지</a>
           <a class="menuItem" href="./resort.html">숙소 정보(빈펄 원더월드)</a>
           <a class="menuItem" href="./cost.html">비용 계산</a>
+        </div>
+      </div>
+      <div class="badge"><a href="./index.html">← 메인</a></div>
     </div>
-  </div>
-  <div class="badge"><a href="./index.html">← 메인</a></div>
-</div>
-<div class="pageLabel">엄친 가족들 푸꾸옥 여행 일정</div>
+
+    <div class="pageLabel">엄친 가족들 푸꾸옥 여행 일정</div>
+
     <div class="header" id="top">
       <div class="title"></div>
-
     </div>
 
     <div class="hero">
       <img src="./assets/tip1.jpg" alt="tips" />
       <div class="heroText">
         <h1>전체 일정입니다</h1>
-            <p>※ 8/24 월요일 오후부터 8/25 하루는 가족 자유 일정입니다!</p>
+        <p>※ 8/24 월요일 오후부터 8/25 하루는 가족 자유 일정입니다!</p>
       </div>
-     
-    </div><br><br>
+    </div>
+    <br><br>
 
     <div class="section">
       <h2>상세 일정</h2>
 
-      <!-- ✅ 여기: 바로가기 버튼(앵커) -->
       <div class="toc" style="margin-bottom:14px;">
         <a class="tocLink" href="#day0">출발</a>
         <a class="tocLink" href="#day1">8/22 토요일 (1일차)</a>
@@ -54,165 +109,161 @@
 
       <div class="list">
         <div class="item">
-  <br><br><div class="h" id="day0"><b>출발</b><span></span></div>
+          <br><br>
+          <div class="h" id="day0"><span class="dayTitle dayTitle--start">출발</span><span></span></div>
 
-  <p class="noticeTitle">※ 엄궁에서 5시 30분에는 출발해야할 것 같아요</p><br><br> 
+          <p class="noticeTitle noticeSub">※ 엄궁에서 5시 30분에는 출발해야할 것 같아요</p><br><br>
 
-  <p class="noticeTitle">※ 여행 출발 준비물</p>
-  <p class="indent">
-    - 여권 / 충전기 / 보조배터리 / 상비약 등 개인 물품<br><br>
-    - 필터 샤워기<br> (기본적으로 상수도 물이 더러워서 필수라고 하네요!)<br><br>
-    - 멀티탭 <br>(전기 코드는 동일해서 돼지코는 필요 없는데, 필요하신 분은 멀티탭 정도 준비해가면 좋을 것 같아요)<br><br>
-    - 그 외 레시가드와 아쿠아슈즈 그리고 썬크림 넉넉히 준비하시면 좋을 것 같습니다
-  </p>
+          <p class="noticeTitle noticeSub">※ 여행 출발 준비물</p>
+          <p class="indent">
+            - 여권 / 충전기 / 보조배터리 / 상비약 등 개인 물품<br><br>
+            - 필터 샤워기<br> (기본적으로 상수도 물이 더러워서 필수라고 하네요!)<br><br>
+            - 멀티탭 <br>(전기 코드는 동일해서 돼지코는 필요 없는데, 필요하신 분은 멀티탭 정도 준비해가면 좋을 것 같아요)<br><br>
+            - 그 외 레시가드와 아쿠아슈즈 그리고 썬크림 넉넉히 준비하시면 좋을 것 같습니다
+          </p>
 
-   <br><br><br><br>
-  <div class="h" id="day1"><b>8/22 토요일 (1일차) </b><span></span></div>
+          <br><br><br><br>
+          <div class="h" id="day1"><span class="dayTitle">8/22 토요일 (1일차)</span><span></span></div>
 
-  <p class="indent">
-     <p class="noticeTitle"> ◈ 공항 → 메오키친 식사(12시 예약 예정) → 킹콩마트 쇼핑 → 서울이발관 마사지(2시~2시30분 예약 예정) → 빈펄 원더월드<br><br><br><br><p>
-    - 입국할 때, 건강상태질문서/입국신고서를 모바일로 미리 작성 후 제공되는 QR을 스크린샷 해두면 패스트트랙 됩니다 ㅎㅎ<br><br>
-    - 저희는 패스트트랙 예약할거라서 빠르게 공항에서 빠져나올 수 있을 듯해요<br><br>
-    - 서울이발관에서 저희를 공항 픽업 후, 마사지 받은 후에는 빈펄까지 샌딩해주기로 했습니다<br><br>
-    - 저녁식사는 Fire BBQ 미리 예약을 할 계획입니다!<br><br>
-    - 킹콩 마트 들려서 물이나 술 등, 숙소에서 먹을 가벼운 주전부리를 구매해서 숙소로 가면 좋을 것 같아요<br><br>
-    - (물이 안맞아서 배탈나는 아이나 어른들도 간혹 있다더라구여, 그래서 한국에서 챙겨가는 사람도 있어요)<br><br>
-</p>
+          <p class="noticeTitle noticeMain">◈ 공항 → 메오키친 식사(12시 예약 예정) → 킹콩마트 쇼핑 → 서울이발관 마사지(2시~2시30분 예약 예정) → 빈펄 원더월드</p>
+          <p class="indent">
+            - 입국할 때, 건강상태질문서/입국신고서를 모바일로 미리 작성 후 제공되는 QR을 스크린샷 해두면 패스트트랙 됩니다 ㅎㅎ<br><br>
+            - 저희는 패스트트랙 예약할거라서 빠르게 공항에서 빠져나올 수 있을 듯해요<br><br>
+            - 서울이발관에서 저희를 공항 픽업 후, 마사지 받은 후에는 빈펄까지 샌딩해주기로 했습니다<br><br>
+            - 저녁식사는 Fire BBQ 미리 예약을 할 계획입니다!<br><br>
+            - 킹콩 마트 들려서 물이나 술 등, 숙소에서 먹을 가벼운 주전부리를 구매해서 숙소로 가면 좋을 것 같아요<br><br>
+            - (물이 안맞아서 배탈나는 아이나 어른들도 간혹 있다더라구여, 그래서 한국에서 챙겨가는 사람도 있어요)<br><br>
+          </p>
 
+          <br><br><br><br>
+          <div class="h" id="day2"><span class="dayTitle">8/23 일요일 (2일차)</span><span></span></div>
 
-<br><br><br><br>
-  <div class="h" id="day2"><b>8/23 일요일 (2일차)</b><span></span></div>
+          <p class="noticeTitle noticeMain">◈ 숙소 → 킹콩마트 → 호핑투어 → 빈산 → 쯔엉동 야시장 → 마사지 → 숙소</p>
+          <p class="indent">
+            - 크레이지 호핑 투어 일정입니다<br><br>
+            - 오전에 조식 호로록하고 빈펄 버스를 타고 킹콩 마트로 가서 12시 쯤 호핑 투어 업체에서 저희를 픽업할 예정이에요<br><br>
+            - 호핑투어에, 한국인 가이드, 점심 식사, 맥주, 음료, 스노클링 장비, 멀미약 등 구비되어 있습니다.<br><br>
+            - 저녁 6시 쯤 호핑 투어 마치고 다시 중부로 와서, 빈산(해산물 레스토랑), 쯔엉동 야시장, 마사지 후 복귀할 계획입니다<br><br>
+            - (피곤하다면 바로 버스타고 숙소로 와서 룸서비스 식사하고 그랜드월드 가서 마사지 받아도 좋아요)<br><br>
+            - 시내에 있을 땐, 기념품 판매하는 '킹콩마트'를 들려볼 생각입니다<br><br>
+          </p>
 
-  <p class="indent">
-     <p class="noticeTitle"> ◈ 숙소 → 킹콩마트 → 호핑투어 → 빈산 → 쯔엉동 야시장 → 마사지 → 숙소<br><br><br><br><p>
-    - 크레이지 호핑 투어 일정입니다<br><br>
-    - 오전에 조식 호로록하고 빈펄 버스를 타고 킹콩 마트로 가서 12시 쯤 호핑 투어 업체에서 저희를 픽업할 예정이에요<br><br>
-    - 호핑투어에, 한국인 가이드, 점심 식사, 맥주, 음료, 스노클링 장비, 멀미약 등 구비되어 있습니다.<br><br>
-    - 저녁 6시 쯤 호핑 투어 마치고 다시 중부로 와서, 빈산(해산물 레스토랑), 쯔엉동 야시장, 마사지 후 복귀할 계획입니다<br><br>
-    - (피곤하다면 바로 버스타고 숙소로 와서 룸서비스 식사하고 그랜드월드 가서 마사지 받아도 좋아요)<br><br>
-    - 시내에 있을 땐, 기념품 판매하는 '킹콩마트'를 들려볼 생각입니다<br><br>
-</p>
+          <br><br>
+          <p class="noticeTitle noticeSub">※ 호핑투어 준비물</p>
+          <p class="indent">
+            - 큰 수건. <br>(레시가드를 입고 있더라도 추울 수 있어서 애들 덮어 줄 타올이 있어야할 듯 해요. 호텔 비치타올 가져가면 될 듯?)<br><br>
+            - 출발 복장은 레시가드, 그리고 갈아 입을 옷 한 벌
+            - 아쿠아슈즈, 핸드폰 방수팩(?)<br><br>
+            - 방수가방<br>(젖은 수건&옷 넣을 가방)<br><br>
+            - 개인 당 매너 팁 5만동 or 2달러 <br>(안주고 싶은데 거의 뭐 강제인 듯 합니다ㅠ)<br><br>
+            - 넉넉한 썬크림
+          </p>
 
-<br><br>  <p class="noticeTitle">※ 호핑투어 준비물</p>
-  <p class="indent">
-    - 큰 수건. <br>(레시가드를 입고 있더라도 추울 수 있어서 애들 덮어 줄 타올이 있어야할 듯 해요. 호텔 비치타올 가져가면 될 듯?)<br><br>
-    - 출발 복장은 레시가드, 그리고 갈아 입을 옷 한 벌
-    - 아쿠아슈즈, 핸드폰 방수팩(?)<br><br>
-    - 방수가방<br>(젖은 수건&옷 넣을 가방)<br><br>
-    - 개인 당 매너 팁 5만동 or 2달러 <br>(안주고 싶은데 거의 뭐 강제인 듯 합니다ㅠ)<br><br>
-    - 넉넉한 썬크림
-  </p>
+          <br><br><br><br>
+          <div class="h" id="day3"><span class="dayTitle">8/24 월요일 (3일차)</span><span></span></div>
 
-<br><br><br><br>
-  <div class="h" id="day3"><b>8/24 월요일 (3일차)</b><span></span></div>
+          <p class="noticeTitle noticeMain">◈ 숙소 → 사파리 → 숙소 → 자유 일정</p>
+          <p class="indent">
+            - 사파리 투어 일정입니다<br><br>
+            - 오전에 조식 호로록하고 빈펄 버스를 타고 사파리로 이동합니다<br><br>
+            - 저희는 단체로 사파리를 돌아 다니며 구경할 계획입니다.<br><br>
+            - (혹시 vip 투어가 혹 땡긴다면, 8시 쯤 일찍 가서 줄을 서야 합니다!) <br><br>
+            - 점심 식사는 사파리 안 레스토랑에서 가능합니다<br><br>
+            - 점심 쯤 사파리 구경이 끝나면, 가족 자유 여행 입니다.<br><br>
+            - 오후에 편안하게 호캉스 좋고, 빈원더스도 좋고, 그랜드월드 구경가서 놀다와도 좋고, 중/남부 가고 싶은 가족은 다녀오셔도 좋고~<br><br>
+            - 그랜드월드가 인접해 있어서 언제든 가서 먹을 수도 있고, 룸서비스도 괜찮은 편이라, 때마다 의논하면 될 것 같아요<br><br>
+          </p>
 
-  <p class="indent">
-     <p class="noticeTitle"> ◈ 숙소 → 사파리 → 숙소 → 자유 일정 <p><br><br><br><br>
-    - 사파리 투어 일정입니다<br><br>
-    - 오전에 조식 호로록하고 빈펄 버스를 타고 사파리로 이동합니다<br><br>
-    - 저희는 단체로 사파리를 돌아 다니며 구경할 계획입니다.<br><br>
-    - (혹시 vip 투어가 혹 땡긴다면, 8시 쯤 일찍 가서 줄을 서야 합니다!) <br><br>
-    - 점심 식사는 사파리 안 레스토랑에서 가능합니다<br><br>
-    - 점심 쯤 사파리 구경이 끝나면, 가족 자유 여행 입니다.<br><br>
-    - 오후에 편안하게 호캉스 좋고, 빈원더스도 좋고, 그랜드월드 구경가서 놀다와도 좋고, 중/남부 가고 싶은 가족은 다녀오셔도 좋고~<br><br>
-    - 그랜드월드가 인접해 있어서 언제든 가서 먹을 수도 있고, 룸서비스도 괜찮은 편이라, 때마다 의논하면 될 것 같아요<br><br>
-</p>
+          <br><br>
+          <p class="noticeTitle noticeSub">※ 사파리 투어 준비물</p>
+          <p class="indent">
+            - 넓은 모자 또는 양산<br>(햇빛에 힘들 수 있어유)<br><br>
+            - 긴팔/쿨토시(?) <br>(사파리 가서 쪄 죽을 뻔 했다는 사람이 많더라구여)<br><br>
+            - 모기 기피제 <br>(아무래도 위치가 산이라서 필요하다는 사람이 많아요)<br><br>
+            - 약간의 현금<br>(먹이주기 체험을 위함)
+          </p><br>
 
-<br><br>  <p class="noticeTitle">※ 사파리 투어 준비물</p>
-  <p class="indent">
-    -  넓은 모자 또는 양산<br>(햇빛에 힘들 수 있어유)<br><br>
-    -  긴팔/쿨토시(?) <br>(사파리 가서 쪄 죽을 뻔 했다는 사람이 많더라구여)<br><br>
-    -  모기 기피제 <br>(아무래도 위치가 산이라서 필요하다는 사람이 많아요)<br><br>
-    -  약간의 현금<br>(먹이주기 체험을 위함)
-   </p><br>
+          <p class="noticeTitle noticeSub">※ 만약, 빈원더스를 가게 될 때, 투어 준비물</p>
+          <p class="indent">
+            - 큰 수건.<br>(이것도 호텔 비치타올 가져가면 될 듯 합니다)<br><br>
+            - 출발 복장은 레시가드, 그리고 갈아 입을 옷 한 벌
+            - 아쿠아슈즈, 핸드폰 방수팩(?)<br><br>
+            - 방수가방<br>(젖은 수건&옷 넣을 가방)<br><br>
+            - 현금<br>(락커룸 이용 또는 간식 등)<br><br>
+            - 넉넉한 썬크림
+          </p>
 
-  <p class="noticeTitle">※ 만약, 빈원더스를 가게 될 때, 투어 준비물</p>
-  <p class="indent">
-    -  큰 수건.<br>(이것도 호텔 비치타올 가져가면 될 듯 합니다)<br><br>
-    -  출발 복장은 레시가드, 그리고 갈아 입을 옷 한 벌
-    -  아쿠아슈즈, 핸드폰 방수팩(?)<br><br>
-    -  방수가방<br>(젖은 수건&옷 넣을 가방)<br><br>
-    -  현금<br>(락커룸 이용 또는 간식 등)<br><br>
-    -  넉넉한 썬크림
-  </p>
+          <br><br><br><br>
+          <div class="h" id="day4"><span class="dayTitle">8/25 화요일 (4일차)</span><span></span></div>
 
+          <p class="noticeTitle noticeSub">※ 가족 자유 일정</p>
+          <p class="indent">
+            - 호캉스도 좋고, 가까운 빈원더스 가보는 것도 좋구여, 관광 여행이 필요하다면 푸꾸옥 남부 여행 추천합니다<br><br>
+            - 남부에는 선셋타운 버기투어, 심포니 쑈, 키쓰브릿지쑈 등 남부 구경 거리가 많아서 추천해요!!<br><br>
+            - 여행 중에 얘기 나눠서, 같이 다니든, 따로 다니든 하면 될 듯 합니다<br><br>
+          </p>
 
+          <br><br><br><br>
+          <div class="h" id="day5"><span class="dayTitle">8/26 수요일 (5일차)</span><span></span></div>
 
+          <p class="noticeTitle noticeMain">※ 숙소 → 중/남부 마사지 샵 또는 짐 보관 서비스 업체에 짐 맡기기 → 혼똔섬 → 중/남부 식사 → 마사지 → 공항</p>
+          <p class="indent">
+            - 체크 아웃 및 복귀 일정입니다.<br><br><br><br>
+            - 조식드시고 일찍 체크 아웃하고, 마사지 업체나, 짐 보관 서비스 업체에 짐을 맡기고 혼똔섬으로 이동합니다<br><br>
+            - 혼똔섬 즐긴 후 저녁식사 및 마사지 받고 복귀를 위해 공항으로 갑니다.<br><br>
+          </p>
 
+          <p class="noticeTitle noticeSub">※ 혼똔섬을 가게 될 때, 투어 준비물</p>
+          <p class="indent">
+            - 큰 수건<br>(워터파크에서 대여 가능하다네요!)<br><br>
+            - 출발 복장은 레시가드, 그리고 갈아 입을 옷 한 벌
+            - 아쿠아슈즈, 핸드폰 방수팩(?)<br><br>
+            - 방수가방<br>(젖은 수건&옷 넣을 가방)<br><br>
+            - 현금<br>(락커룸 이용 또는 간식 등)<br><br>
+            - 넉넉한 썬크림
+          </p>
 
+          <br><br><br><br>
+          <div class="h" id="day6"><span class="dayTitle dayTitle--end">8/27 목요일 (6일차)</span><span></span></div>
 
+          <p class="indent">
+            - 아침 7시 안되어서 김해 공항에 도착합니다.<br><br><br><br>
+            - 별 일 없이 움직이면 8~9시 쯤에는 엄궁 각자 집에 도착합니다 <br><br>
+            - 피곤하지만 바로 본업으로 복귀!!<br><br>
+          </p>
 
-<br><br><br><br>
-  <div class="h" id="day4"><b>8/25 화요일 (4일차)</b><span></span></div>
+          <br><br>
+          <p class="noticeTitle noticeSub">▷ 엄친 가족들 푸꾸옥 여행 끝 ◁</p>
+          <p class="indent"></p>
+        </div>
 
-  <p class="indent">
-<p class="noticeTitle">※ 가족 자유 일정 <p><br><br><br><br>
-    - 호캉스도 좋고, 가까운 빈원더스 가보는 것도 좋구여, 관광 여행이 필요하다면 푸꾸옥 남부 여행 추천합니다<br><br>
-    - 남부에는 선셋타운 버기투어, 심포니 쑈, 키쓰브릿지쑈 등 남부 구경 거리가 많아서 추천해요!!<br><br>
-    - 여행 중에 얘기 나눠서, 같이 다니든, 따로 다니든 하면 될 듯 합니다<br><br>
-</p>
-
-
-<br><br><br><br>
-  <div class="h" id="day5"><b>8/26 수요일 (5일차)</b><span></span></div>
-
-  <p class="indent">
-<p class="noticeTitle">※ 숙소 → 중/남부 마사지 샵 또는 짐 보관 서비스 업체에 짐 맡기기 → 혼똔섬 → 중/남부 식사 → 마사지 → 공항 <p><br><br><br><br>
-    - 체크 아웃 및 복귀 일정입니다.<br><br><br><br>
-    - 조식드시고 일찍 체크 아웃하고, 마사지 업체나, 짐 보관 서비스 업체에 짐을 맡기고 혼똔섬으로 이동합니다<br><br>
-    - 혼똔섬 즐긴 후 저녁식사 및 마사지 받고 복귀를 위해 공항으로 갑니다.<br><br>
-</p>
-
- <p class="noticeTitle">※ 혼똔섬을 가게 될 때, 투어 준비물</p>
-  <p class="indent">
-    - 큰 수건<br>(워터파크에서 대여 가능하다네요!)<br><br>
-    - 출발 복장은 레시가드, 그리고 갈아 입을 옷 한 벌
-    - 아쿠아슈즈, 핸드폰 방수팩(?)<br><br>
-    - 방수가방<br>(젖은 수건&옷 넣을 가방)<br><br>
-    - 현금<br>(락커룸 이용 또는 간식 등)<br><br>
-    - 넉넉한 썬크림
-  </p>
-
-
-
-<br><br><br><br>
-  <div class="h" id="day6"><b>8/27 목요일 (6일차)</b><span></span></div>
-
-  <p class="indent">
-    - 아침 7시 안되어서 김해 공항에 도착합니다.<br><br><br><br>
-    - 별 일 없이 움직이면 8~9시 쯤에는 엄궁 각자 집에 도착합니다 <br><br>
-    - 피곤하지만 바로 본업으로 복귀!!<br><br>
-</p>
-<br><br>  <p class="noticeTitle">▷ 엄친 가족들 푸꾸옥 여행 끝 ◁</p>
-  <p class="indent">
-  </p>
-
-
-
-</div>
-		<br><br><br><br>
-        <div class="item"><div class="h"><b>궁금하신 내용은 톡주세유</b><span></span></div><p></p></div>
+        <br><br><br><br>
+        <div class="item">
+          <div class="h"><b>궁금하신 내용은 톡주세유</b><span></span></div>
+          <p></p>
+        </div>
       </div>
     </div>
+
     <a class="toTop" href="#top" aria-label="맨 위로">↑ TOP</a>
   </div>
-<script>
-  (function(){
-    const btn = document.getElementById("menuBtn");
-    const panel = document.getElementById("menuPanel");
-    if(!btn || !panel) return;
 
-    btn.addEventListener("click", () => {
-      panel.classList.toggle("open");
-    });
+  <script>
+    (function(){
+      const btn = document.getElementById("menuBtn");
+      const panel = document.getElementById("menuPanel");
+      if(!btn || !panel) return;
 
-    // 바깥 클릭하면 닫기
-    document.addEventListener("click", (e) => {
-      if(!panel.classList.contains("open")) return;
-      if(panel.contains(e.target) || btn.contains(e.target)) return;
-      panel.classList.remove("open");
-    });
-  })();
-</script>
+      btn.addEventListener("click", () => {
+        panel.classList.toggle("open");
+      });
+
+      document.addEventListener("click", (e) => {
+        if(!panel.classList.contains("open")) return;
+        if(panel.contains(e.target) || btn.contains(e.target)) return;
+        panel.classList.remove("open");
+      });
+    })();
+  </script>
 </body>
 </html>
